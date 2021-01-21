@@ -1,2 +1,2 @@
-# discord-bot
-Creating a Discord Bot
+# discord-bot-project
+Discord bot
