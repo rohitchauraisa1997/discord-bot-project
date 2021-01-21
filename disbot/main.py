@@ -38,5 +38,18 @@ async def _8ball(context, *, question):
     await context.send("Question: {} \n Answer: {}".format(question, random.choice(responses)))
 
 
+@client.command()
+async def clear(context, amount=5):
+    await context.channel.purge(limit=amount)
+
+@client.command()
+async def kick(context, member:discord.Member, *, reason=None):
+    await member.kick(reason=reason)
+
+@client.command()
+async def ban(context, member:discord.Member, *, reason=None):
+    await member.ban(reason=reason)
+    await context.send("banned {}".format(member.mention))
+
 client.run(config('KEY'))
 
